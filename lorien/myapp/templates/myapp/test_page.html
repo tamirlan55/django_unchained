@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <link rel='stylesheet' href="{% static 'myapp/style.css' %}"">
+    </head>
+    <body>
+        <h1> This is test_page template </h1>
+        <h4>
+            <!-- <a href="/myapp/test_page/{{item.id}}"></a> -->
+            {%for item in items %}
+            <a href="{% url 'myapp:detail' item.id %}">
+            ID: {{item.id}} | Модель: {{item.name}} | Цена: {{item.price}} | Описание: {{item.description}} <br/>
+            <a>
+            {% endfor %}
+                </a>
+            </a>
+        </h4>
+    </body>
+</html>
